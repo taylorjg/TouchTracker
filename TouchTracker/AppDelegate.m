@@ -7,6 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "TouchViewController.h"
+
+@interface AppDelegate()
+{
+    TouchViewController* _tvc;
+}
+
+@end
+
 
 @implementation AppDelegate
 
@@ -14,10 +23,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    UIWindow* window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    [self setWindow:window];
+    
+    TouchViewController* tvc = [[TouchViewController alloc] init];
+    
+    if ([window respondsToSelector:@selector(setRootViewController:)]) {
+        [window setRootViewController:tvc];
+        [tvc release];
+    }
+    else {
+        [window addSubview:[tvc view]];
+    }
+    
+    [window setBackgroundColor:[UIColor whiteColor]];
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -46,6 +67,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [_tvc release];
 }
 
 @end

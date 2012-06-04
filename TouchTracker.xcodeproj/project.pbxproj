@@ -18,6 +18,20 @@
 		9F037A481543093000611217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F037A2F1543093000611217 /* Foundation.framework */; };
 		9F037A501543093000611217 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F037A4E1543093000611217 /* InfoPlist.strings */; };
 		9F037A531543093000611217 /* TouchTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F037A521543093000611217 /* TouchTrackerTests.m */; };
+		9F037A5E1543414500611217 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F037A5D1543414500611217 /* Line.m */; };
+		9F037A611543429600611217 /* TouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F037A601543429600611217 /* TouchDrawView.m */; };
+		9F037A641543477500611217 /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F037A631543477500611217 /* TouchViewController.m */; };
+		9F441F6B157A134D00BE97B0 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F441F6A157A134D00BE97B0 /* Player.m */; };
+		9F441F70157A208400BE97B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F441F6F157A208400BE97B0 /* QuartzCore.framework */; };
+		9F441F73157A5A6300BE97B0 /* Players.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F441F72157A5A6300BE97B0 /* Players.m */; };
+		9FB90B2B156911C7008CB587 /* 98-palette.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FB90B29156911C7008CB587 /* 98-palette.png */; };
+		9FB90B2C156911C7008CB587 /* 98-palette@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FB90B2A156911C7008CB587 /* 98-palette@2x.png */; };
+		9FC0FCDD156474DC00ED908D /* 37-circle-x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC0FCDB156474DC00ED908D /* 37-circle-x.png */; };
+		9FC0FCDE156474DC00ED908D /* 37-circle-x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC0FCDC156474DC00ED908D /* 37-circle-x@2x.png */; };
+		9FDFE16115531F370035FBF8 /* 58-wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFE15F15531F370035FBF8 /* 58-wifi.png */; };
+		9FDFE16215531F370035FBF8 /* 58-wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFE16015531F370035FBF8 /* 58-wifi@2x.png */; };
+		9FDFE169155326850035FBF8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDFE168155326850035FBF8 /* GameKit.framework */; };
+		9FF2DFC4157B7E07008007D0 /* TurnBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DFC3157B7E07008007D0 /* TurnBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +49,38 @@
 		9F037A2D1543093000611217 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F037A2F1543093000611217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F037A311543093000611217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9F037A351543093000611217 /* TouchTracker-Info.plist */ = {isa = PBXFileReference; path = "TouchTracker-Info.plist"; sourceTree = "<group>"; };
+		9F037A351543093000611217 /* TouchTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchTracker-Info.plist"; sourceTree = "<group>"; };
 		9F037A371543093000611217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F037A391543093000611217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9F037A3B1543093000611217 /* TouchTracker-Prefix.pch */ = {isa = PBXFileReference; path = "TouchTracker-Prefix.pch"; sourceTree = "<group>"; };
-		9F037A3C1543093000611217 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F037A3B1543093000611217 /* TouchTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchTracker-Prefix.pch"; sourceTree = "<group>"; };
+		9F037A3C1543093000611217 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F037A3D1543093000611217 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F037A441543093000611217 /* TouchTrackerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchTrackerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F037A451543093000611217 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		9F037A4D1543093000611217 /* TouchTrackerTests-Info.plist */ = {isa = PBXFileReference; path = "TouchTrackerTests-Info.plist"; sourceTree = "<group>"; };
+		9F037A4D1543093000611217 /* TouchTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		9F037A4F1543093000611217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9F037A511543093000611217 /* TouchTrackerTests.h */ = {isa = PBXFileReference; path = TouchTrackerTests.h; sourceTree = "<group>"; };
+		9F037A511543093000611217 /* TouchTrackerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchTrackerTests.h; sourceTree = "<group>"; };
 		9F037A521543093000611217 /* TouchTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchTrackerTests.m; sourceTree = "<group>"; };
+		9F037A5C1543414500611217 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line.h; path = TouchTracker/Line.h; sourceTree = "<group>"; };
+		9F037A5D1543414500611217 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line.m; path = TouchTracker/Line.m; sourceTree = "<group>"; };
+		9F037A5F1543429600611217 /* TouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchDrawView.h; path = TouchTracker/TouchDrawView.h; sourceTree = "<group>"; };
+		9F037A601543429600611217 /* TouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchDrawView.m; path = TouchTracker/TouchDrawView.m; sourceTree = "<group>"; };
+		9F037A621543477400611217 /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchViewController.h; path = TouchTracker/TouchViewController.h; sourceTree = "<group>"; };
+		9F037A631543477500611217 /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchViewController.m; path = TouchTracker/TouchViewController.m; sourceTree = "<group>"; };
+		9F441F69157A134D00BE97B0 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = TouchTracker/Player.h; sourceTree = "<group>"; };
+		9F441F6A157A134D00BE97B0 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = TouchTracker/Player.m; sourceTree = "<group>"; };
+		9F441F6F157A208400BE97B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9F441F71157A5A6300BE97B0 /* Players.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Players.h; path = TouchTracker/Players.h; sourceTree = "<group>"; };
+		9F441F72157A5A6300BE97B0 /* Players.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Players.m; path = TouchTracker/Players.m; sourceTree = "<group>"; };
+		9FB90B29156911C7008CB587 /* 98-palette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "98-palette.png"; path = "TouchTracker/98-palette.png"; sourceTree = "<group>"; };
+		9FB90B2A156911C7008CB587 /* 98-palette@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "98-palette@2x.png"; path = "TouchTracker/98-palette@2x.png"; sourceTree = "<group>"; };
+		9FC0FCDB156474DC00ED908D /* 37-circle-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37-circle-x.png"; path = "TouchTracker/37-circle-x.png"; sourceTree = "<group>"; };
+		9FC0FCDC156474DC00ED908D /* 37-circle-x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37-circle-x@2x.png"; path = "TouchTracker/37-circle-x@2x.png"; sourceTree = "<group>"; };
+		9FDFE15F15531F370035FBF8 /* 58-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "58-wifi.png"; path = "TouchTracker/58-wifi.png"; sourceTree = "<group>"; };
+		9FDFE16015531F370035FBF8 /* 58-wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "58-wifi@2x.png"; path = "TouchTracker/58-wifi@2x.png"; sourceTree = "<group>"; };
+		9FDFE168155326850035FBF8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9FF2DFC2157B7E07008007D0 /* TurnBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnBar.h; path = TouchTracker/TurnBar.h; sourceTree = "<group>"; };
+		9FF2DFC3157B7E07008007D0 /* TurnBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnBar.m; path = TouchTracker/TurnBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F441F70157A208400BE97B0 /* QuartzCore.framework in Frameworks */,
+				9FDFE169155326850035FBF8 /* GameKit.framework in Frameworks */,
 				9F037A2E1543093000611217 /* UIKit.framework in Frameworks */,
 				9F037A301543093000611217 /* Foundation.framework in Frameworks */,
 				9F037A321543093000611217 /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +112,10 @@
 		9F037A1E1543093000611217 = {
 			isa = PBXGroup;
 			children = (
+				9F441F6F157A208400BE97B0 /* QuartzCore.framework */,
+				9F0ABAE91568099100398305 /* Classes */,
+				9FE510721565B1D00058BFFF /* Images */,
+				9FDFE168155326850035FBF8 /* GameKit.framework */,
 				9F037A331543093000611217 /* TouchTracker */,
 				9F037A4B1543093000611217 /* TouchTrackerTests */,
 				9F037A2C1543093000611217 /* Frameworks */,
@@ -143,6 +183,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9F0ABAE91568099100398305 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9F037A5F1543429600611217 /* TouchDrawView.h */,
+				9F037A601543429600611217 /* TouchDrawView.m */,
+				9F037A621543477400611217 /* TouchViewController.h */,
+				9F037A631543477500611217 /* TouchViewController.m */,
+				9F037A5C1543414500611217 /* Line.h */,
+				9F037A5D1543414500611217 /* Line.m */,
+				9F441F69157A134D00BE97B0 /* Player.h */,
+				9F441F6A157A134D00BE97B0 /* Player.m */,
+				9F441F71157A5A6300BE97B0 /* Players.h */,
+				9F441F72157A5A6300BE97B0 /* Players.m */,
+				9FF2DFC2157B7E07008007D0 /* TurnBar.h */,
+				9FF2DFC3157B7E07008007D0 /* TurnBar.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		9FE510721565B1D00058BFFF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0FCDB156474DC00ED908D /* 37-circle-x.png */,
+				9FC0FCDC156474DC00ED908D /* 37-circle-x@2x.png */,
+				9FDFE15F15531F370035FBF8 /* 58-wifi.png */,
+				9FDFE16015531F370035FBF8 /* 58-wifi@2x.png */,
+				9FB90B29156911C7008CB587 /* 98-palette.png */,
+				9FB90B2A156911C7008CB587 /* 98-palette@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,7 +264,6 @@
 			};
 			buildConfigurationList = 9F037A231543093000611217 /* Build configuration list for PBXProject "TouchTracker" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -214,6 +285,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F037A381543093000611217 /* InfoPlist.strings in Resources */,
+				9FDFE16115531F370035FBF8 /* 58-wifi.png in Resources */,
+				9FDFE16215531F370035FBF8 /* 58-wifi@2x.png in Resources */,
+				9FC0FCDD156474DC00ED908D /* 37-circle-x.png in Resources */,
+				9FC0FCDE156474DC00ED908D /* 37-circle-x@2x.png in Resources */,
+				9FB90B2B156911C7008CB587 /* 98-palette.png in Resources */,
+				9FB90B2C156911C7008CB587 /* 98-palette@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +327,12 @@
 			files = (
 				9F037A3A1543093000611217 /* main.m in Sources */,
 				9F037A3E1543093000611217 /* AppDelegate.m in Sources */,
+				9F037A5E1543414500611217 /* Line.m in Sources */,
+				9F037A611543429600611217 /* TouchDrawView.m in Sources */,
+				9F037A641543477500611217 /* TouchViewController.m in Sources */,
+				9F441F6B157A134D00BE97B0 /* Player.m in Sources */,
+				9F441F73157A5A6300BE97B0 /* Players.m in Sources */,
+				9FF2DFC4157B7E07008007D0 /* TurnBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,9 +424,11 @@
 		9F037A571543093000611217 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchTracker/TouchTracker-Prefix.pch";
 				INFOPLIST_FILE = "TouchTracker/TouchTracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -352,9 +437,11 @@
 		9F037A581543093000611217 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchTracker/TouchTracker-Prefix.pch";
 				INFOPLIST_FILE = "TouchTracker/TouchTracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -413,6 +500,7 @@
 				9F037A581543093000611217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F037A591543093000611217 /* Build configuration list for PBXNativeTarget "TouchTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +509,7 @@
 				9F037A5B1543093000611217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

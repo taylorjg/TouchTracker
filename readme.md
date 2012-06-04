@@ -9,3 +9,9 @@ networking support. The program deomonstrates the following:
 - Choosing one device as the host which then controls the order of play
 - The devices taking it in turns to play (in this case, to draw lines)
 
+## TODO
+
+- Add a timeout feature for each player turn
+- Improve the colour selector - make it a nicely formatted table
+
+

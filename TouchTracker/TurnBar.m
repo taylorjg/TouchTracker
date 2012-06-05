@@ -8,13 +8,15 @@
 
 #import "TurnBar.h"
 #import "Player.h"
+#import "TimeoutDisplay.h"
 
-@interface TurnBar()
+@interface TurnBar() <TimeoutDisplayDelegate>
 {
     @private
     UIView* _parentView;
     UIBarButtonItem* _doneButton;
     UIToolbar* _toolbar;
+    TimeoutDisplay* _timeoutDisplay;
     NSString* _turnText;
     Player* _currentPlayer;
 }
@@ -63,16 +65,29 @@
         CGRect parentViewBounds = _parentView.bounds;
         const CGFloat toolbarHeight = [_toolbar frame].size.height;
         
-        CGRect rect = CGRectZero;
-        rect.origin.x = 0.0f;
-        rect.origin.y = parentViewBounds.size.height - toolbarHeight;
-        rect.size.width = parentViewBounds.size.width;
-        rect.size.height = toolbarHeight;
+        CGRect selfFrame = CGRectZero;
+        selfFrame.origin.x = 0.0f;
+        selfFrame.origin.y = parentViewBounds.size.height - toolbarHeight;
+        selfFrame.size.width = parentViewBounds.size.width;
+        selfFrame.size.height = toolbarHeight;
         
-        [self setFrame:rect];
+        [self setFrame:selfFrame];
         [[_parentView layer] addSublayer:self];
         [self setHidden:YES];
         [self setNeedsDisplay];
+        
+        const CGFloat MARGIN = 6.0f;
+
+        CGFloat timeoutDisplaySize = toolbarHeight - (2 * MARGIN);
+        CGRect timeoutDisplayFrame = CGRectZero;
+        timeoutDisplayFrame.origin.x = parentViewBounds.size.width - (timeoutDisplaySize + MARGIN);
+        timeoutDisplayFrame.origin.y = parentViewBounds.size.height - toolbarHeight + MARGIN;
+        timeoutDisplayFrame.size.width = timeoutDisplaySize;
+        timeoutDisplayFrame.size.height = timeoutDisplaySize;
+        
+        _timeoutDisplay = [[TimeoutDisplay alloc] initWithFrame:timeoutDisplayFrame];
+        [_timeoutDisplay setTimeoutDisplayDelegate:self];
+        [[_parentView layer] addSublayer:_timeoutDisplay];
         
         _turnText = nil;
         _currentPlayer = nil;
@@ -84,11 +99,15 @@
 
 - (void) dealloc {
     
+    NSLog(@"TurnBar dealloc");
+    
     [_doneButton release];
     [_toolbar removeFromSuperview];
     [_toolbar release];
     [_turnText release];
     [_currentPlayer release];
+    
+    [_timeoutDisplay release];
     
     [super dealloc];
 }
@@ -145,6 +164,8 @@
     _toolbar.center = centreTo;
     // TODO: we could restore the original height of the parent view here...
     [UIView commitAnimations];
+    
+    [_timeoutDisplay stop];
 }
 
 
@@ -164,6 +185,10 @@
     [_doneButton setEnabled:[_currentPlayer isLocalPlayer]];
     
     [self setNeedsDisplay];
+    
+    if ([_currentPlayer isLocalPlayer]) {
+        [_timeoutDisplay start:10];
+    }
 }
 
 
@@ -180,18 +205,28 @@
 
 
 - (void) doneButtonPressed:(id)sender {
-    
     NSLog(@"doneButtonPressed:");
-    
+    [_timeoutDisplay stop];
+    [self raiseDelegateMethodTimedOut:NO];
+}
+
+
+- (void) raiseDelegateMethodTimedOut:(BOOL)timedOut {
     if ([[self turnBarDelegate] respondsToSelector:@selector(turnBar:didEndTurnForPlayer:timedOut:)]) {
-        [[self turnBarDelegate] turnBar:self didEndTurnForPlayer:[self currentPlayer] timedOut:NO];
+        [[self turnBarDelegate] turnBar:self didEndTurnForPlayer:[self currentPlayer] timedOut:timedOut];
     }
+}
+
+
+- (void) didTimeoutInTimeoutDisplay:(TimeoutDisplay *)timeoutDisplay {
+    NSLog(@"didTimeoutInTimeoutDisplay:");
+    [self raiseDelegateMethodTimedOut:YES];
 }
 
 
 - (void) drawInContext:(CGContextRef)theContext {
     
-    NSLog(@"drawInContext:");
+    NSLog(@"TurnBar drawInContext:");
     
     if (_turnText == nil) {
         return;

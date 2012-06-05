@@ -31,9 +31,11 @@
     if ([window respondsToSelector:@selector(setRootViewController:)]) {
         [window setRootViewController:tvc];
         [tvc release];
+        _tvc = nil;
     }
     else {
         [window addSubview:[tvc view]];
+        _tvc = tvc;
     }
     
     [window setBackgroundColor:[UIColor whiteColor]];

@@ -49,6 +49,8 @@
 
 - (void) dealloc {
 
+    NSLog(@"TouchDrawView dealloc");
+    
     [lineColour release];
     [remoteLineColour release];
     

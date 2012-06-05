@@ -15,27 +15,21 @@
 /*
  * BUG FIXES TO MAKE:
  *
- * (none at present)
+ * Sometimes, after establishing a connection, the turnbar doesn't appear.
+ * - need to capture logs from both devices to investigate further
  *
  * TODO:
- * 
- * Implement timed turns
- * - add a timeout control to the toolbar (bottom right)
- * - make the timeout configurable e.g. 10s - 60s
- * - after timeout, force change of turn
  * 
  * Add a nice table view to pick the colour
  * - add nice styling to the table
  * - e.g. set the background colour of the cell to the corresponding colour, rounded borders, etc.
  * - get ideas form the "Pro iOS Table Views" book
  * http://www.apress.com/9781430233480
- * - also, use this table to set the turn timeout
+ * - also, use this table to set the turn timeout ?
  *
  * Use peer picker or do our own automatic session connection establishment based on a #define
  *
  * Move the networking code into a separate module
- *
- * For the moment, remove GameCenterManager class (not currently using it)
  *
  */
 
@@ -88,6 +82,8 @@
 
 
 - (void) dealloc {
+    
+    NSLog(@"TouchViewController dealloc");
     
     [self disconnectSendingGoodbyePacket:NO];
 
@@ -485,6 +481,7 @@
 - (void) turnBar:(TurnBar*)turnBar didEndTurnForPlayer:(Player*)player timedOut:(BOOL)timedOut {
     
     NSLog(@"turnBar:didEndTurnForPlayer:timedOut:");
+    NSLog(@"timedOut: %@", timedOut ? @"YES" : @"NO");
 
     [self changeTurn];
 }

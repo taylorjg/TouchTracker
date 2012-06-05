@@ -174,10 +174,6 @@ static const int GETTING_LOW_THRESHOLD = 5;
 	CGAffineTransform flip = CGAffineTransformMake(1, 0, 0, -1, 0, 0);
 	CGContextSetTextMatrix(theContext, flip);
     
-    if (isCritical) {
-		CGContextSetShadowWithColor(theContext, CGSizeMake(4.0f, 4.0f), 20.0f, colour.CGColor);
-    }
-    
     UIGraphicsPushContext(theContext);
     [label drawAtPoint:CGPointMake(x, y) withFont:font];
     UIGraphicsPopContext();

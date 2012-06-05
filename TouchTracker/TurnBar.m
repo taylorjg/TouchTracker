@@ -66,28 +66,24 @@
         const CGFloat toolbarHeight = [_toolbar frame].size.height;
         
         CGRect selfFrame = CGRectZero;
-        selfFrame.origin.x = 0.0f;
-        selfFrame.origin.y = parentViewBounds.size.height - toolbarHeight;
-        selfFrame.size.width = parentViewBounds.size.width;
-        selfFrame.size.height = toolbarHeight;
+        selfFrame.size = [_toolbar frame].size;
         
         [self setFrame:selfFrame];
-        [[_parentView layer] addSublayer:self];
         [self setHidden:YES];
-        [self setNeedsDisplay];
+        [[_toolbar layer] addSublayer:self];
         
         const CGFloat MARGIN = 6.0f;
 
         CGFloat timeoutDisplaySize = toolbarHeight - (2 * MARGIN);
         CGRect timeoutDisplayFrame = CGRectZero;
         timeoutDisplayFrame.origin.x = parentViewBounds.size.width - (timeoutDisplaySize + MARGIN);
-        timeoutDisplayFrame.origin.y = parentViewBounds.size.height - toolbarHeight + MARGIN;
+        timeoutDisplayFrame.origin.y = MARGIN;
         timeoutDisplayFrame.size.width = timeoutDisplaySize;
         timeoutDisplayFrame.size.height = timeoutDisplaySize;
         
         _timeoutDisplay = [[TimeoutDisplay alloc] initWithFrame:timeoutDisplayFrame];
         [_timeoutDisplay setTimeoutDisplayDelegate:self];
-        [[_parentView layer] addSublayer:_timeoutDisplay];
+        [[_toolbar layer] addSublayer:_timeoutDisplay];
         
         _turnText = nil;
         _currentPlayer = nil;
